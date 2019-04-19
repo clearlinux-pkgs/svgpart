@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : svgpart
-Version  : 18.12.3
-Release  : 4
-URL      : https://download.kde.org/stable/applications/18.12.3/src/svgpart-18.12.3.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.12.3/src/svgpart-18.12.3.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.12.3/src/svgpart-18.12.3.tar.xz.sig
+Version  : 19.04.0
+Release  : 5
+URL      : https://download.kde.org/stable/applications/19.04.0/src/svgpart-19.04.0.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.0/src/svgpart-19.04.0.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.0/src/svgpart-19.04.0.tar.xz.sig
 Summary  : A KPart for viewing SVGs
 Group    : Development/Tools
 License  : GPL-2.0
@@ -59,14 +59,14 @@ locales components for the svgpart package.
 
 
 %prep
-%setup -q -n svgpart-18.12.3
+%setup -q -n svgpart-19.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1555344308
+export SOURCE_DATE_EPOCH=1555633828
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -74,7 +74,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1555344308
+export SOURCE_DATE_EPOCH=1555633828
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/svgpart
 cp COPYING %{buildroot}/usr/share/package-licenses/svgpart/COPYING
@@ -89,11 +89,10 @@ popd
 %files data
 %defattr(-,root,root,-)
 /usr/share/kservices5/svgpart.desktop
-/usr/share/kxmlgui5/svgpart/svgpart.rc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/qt5/plugins/svgpart.so
+/usr/lib64/qt5/plugins/kf5/parts/svgpart.so
 
 %files license
 %defattr(0644,root,root,0755)
