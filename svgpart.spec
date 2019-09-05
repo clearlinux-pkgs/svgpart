@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : svgpart
-Version  : 19.08.0
-Release  : 10
-URL      : https://download.kde.org/stable/applications/19.08.0/src/svgpart-19.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.0/src/svgpart-19.08.0.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.0/src/svgpart-19.08.0.tar.xz.sig
+Version  : 19.08.1
+Release  : 11
+URL      : https://download.kde.org/stable/applications/19.08.1/src/svgpart-19.08.1.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.1/src/svgpart-19.08.1.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.1/src/svgpart-19.08.1.tar.xz.sig
 Summary  : A KPart for viewing SVGs
 Group    : Development/Tools
 License  : GPL-2.0
@@ -59,14 +59,14 @@ locales components for the svgpart package.
 
 
 %prep
-%setup -q -n svgpart-19.08.0
+%setup -q -n svgpart-19.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565921269
+export SOURCE_DATE_EPOCH=1567723092
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -83,7 +83,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565921269
+export SOURCE_DATE_EPOCH=1567723092
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/svgpart
 cp COPYING %{buildroot}/usr/share/package-licenses/svgpart/COPYING
