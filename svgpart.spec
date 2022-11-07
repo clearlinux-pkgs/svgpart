@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : svgpart
-Version  : 22.08.2
-Release  : 43
-URL      : https://download.kde.org/stable/release-service/22.08.2/src/svgpart-22.08.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.08.2/src/svgpart-22.08.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.08.2/src/svgpart-22.08.2.tar.xz.sig
+Version  : 22.08.3
+Release  : 44
+URL      : https://download.kde.org/stable/release-service/22.08.3/src/svgpart-22.08.3.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.08.3/src/svgpart-22.08.3.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.08.3/src/svgpart-22.08.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -59,15 +59,15 @@ locales components for the svgpart package.
 
 
 %prep
-%setup -q -n svgpart-22.08.2
-cd %{_builddir}/svgpart-22.08.2
+%setup -q -n svgpart-22.08.3
+cd %{_builddir}/svgpart-22.08.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1665701182
+export SOURCE_DATE_EPOCH=1667853138
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,7 +83,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1665701182
+export SOURCE_DATE_EPOCH=1667853138
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/svgpart
 cp %{_builddir}/svgpart-%{version}/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/svgpart/29fb05b49e12a380545499938c4879440bd8851e || :
